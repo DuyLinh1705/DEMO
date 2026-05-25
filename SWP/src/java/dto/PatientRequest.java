@@ -1,28 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package entity;
-import java.sql.Date;
+package dto;
 
 /**
- *
+ * Data Transfer Object cho Patient request
+ * Giúp giảm số lượng tham số truyền vào method
  * @author admin
  */
-public class Patient {
-    private int patientId;
+public class PatientRequest {
+    private Integer id;
     private String username;
     private String password;
     private String fullname;
     private String gender;
     private String phone;
     private String email;
-    private Date dob;
-
-    // Constructors
-    public Patient() {}
-
-    public Patient(String username, String password, String fullname, String gender, String phone, String email, Date dob) {
+    private String dob;
+    
+    // Constructor
+    public PatientRequest() {}
+    
+    public PatientRequest(String username, String password, String fullname, 
+                         String gender, String phone, String email, String dob) {
         this.username = username;
         this.password = password;
         this.fullname = fullname;
@@ -31,9 +28,10 @@ public class Patient {
         this.email = email;
         this.dob = dob;
     }
-
-    public Patient(int patientId, String username, String password, String fullname, String gender, String phone, String email, Date dob) {
-        this.patientId = patientId;
+    
+    public PatientRequest(Integer id, String username, String password, String fullname,
+                         String gender, String phone, String email, String dob) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.fullname = fullname;
@@ -42,10 +40,10 @@ public class Patient {
         this.email = email;
         this.dob = dob;
     }
-
-    // Getters và Setters
-    public int getPatientId() { return patientId; }
-    public void setPatientId(int patientId) { this.patientId = patientId; }
+    
+    // Getters and Setters
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
     
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
@@ -65,19 +63,19 @@ public class Patient {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
     
-    public Date getDob() { return dob; }
-    public void setDob(Date dob) { this.dob = dob; }
+    public String getDob() { return dob; }
+    public void setDob(String dob) { this.dob = dob; }
     
     @Override
     public String toString() {
-        return "Patient{" +
-                "patientId=" + patientId +
+        return "PatientRequest{" +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", fullname='" + fullname + '\'' +
                 ", gender='" + gender + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", dob=" + dob +
+                ", dob='" + dob + '\'' +
                 '}';
     }
 }
